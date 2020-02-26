@@ -1,0 +1,36 @@
+{
+  "name": "cassette",
+  "version": "0.0.1",
+  "description": "Cassette-Музыкальная студия в Минске. +375 25 797-24-52",
+  "productName": "Cassette App",
+  "cordovaId": "org.cordova.quasar.app",
+  "capacitorId": "",
+  "author": "Anton <workglebov@gmail.com>",
+  "private": true,
+  "scripts": {
+    "lint": "eslint --ext .js,.vue src",
+    "test": "echo \"No test specified\" && exit 0"
+  },
+  "dependencies": {
+    "@quasar/extras": "^1.5.0",
+    "core-js": "^2.6.10",
+    "quasar": "^1.8.5"
+  },
+  "devDependencies": {
+    "@quasar/app": "^1.5.2",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-loader": "^2.2.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-vue": "^5.2.3"
+  },
+  "engines": {
+    "node": ">= 10.18.1",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
+  },
+  "browserslist": [
+    "last 1 version, not dead, ie >= 11"
+  ]
+}
