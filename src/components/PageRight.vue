@@ -13,9 +13,9 @@ export default {
   },
   data() {
     return {
-      cassetteAddress: "г.Минск, ул. Улица 1",
-      cassetteMail: "workglebov@gmail.com",
-      cassettePhone: "+375 (29) 390-53-54"
+      cassetteAddress: "г.Минск, ул. Первомайская 14, Каб 311",
+      cassetteMail: "molokova.sveta@yandex.ru",
+      cassettePhone: "+375 (25) 797-24-52"
     };
   },
   methods: {
@@ -33,12 +33,12 @@ export default {
       :class="{ fadeInRight: isContactsOpened }"
     >
       <h3>Здравствуйте, рады Вас видеть!</h3>
-      <p>
+      <p class="text1">
         Cassette - уютная студия музыкального обучения в самом центре Минска. Мы
         работаем с 9.00 до 22.00 без выходных!
       </p>
-      <p>Запишитесь на пробное занятие, чтобы это проверить!</p>
-      <CassetteForm />
+      <p class="text1">Запишитесь на пробное занятие прямо сейчас!</p>
+      <CassetteForm ref="cassetteForm" />
 
       <div class="row">
         <div class="address-detail">
@@ -84,7 +84,7 @@ export default {
 
 <style lang="scss" scoped>
 .page-right {
-  padding: $spacer * 3 $spacer * 2;
+  padding: $spacer / 2 $spacer * 1.5;
   color: white;
   h3 {
     font-size: 24px;
@@ -94,18 +94,16 @@ export default {
   .sec-pad {
     .address-detail {
       display: flex;
-      margin: $spacer * 2 0 $spacer/2;
-      text-align: left;
-      overflow: hidden;
-      clear: both;
-      float: none;
-      font-size: 100%;
-      vertical-align: baseline;
+      margin-top: $spacer * 2;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 100%;
       .margin-btm-sm {
         position: relative;
         min-height: 1px;
-        padding: 0 $spacer/2;
+        padding: 0 $spacer/2 $spacer/2;
         cursor: pointer;
+        max-width: 248px;
         &:hover {
           .sep-wrap {
             background: transparent;
@@ -143,6 +141,7 @@ export default {
           display: block;
           font-weight: bold;
           margin-bottom: 0;
+          white-space: pre-wrap;
         }
       }
     }

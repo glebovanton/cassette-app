@@ -1,6 +1,6 @@
 // app global css in SCSS form
 body {
-  font-family: Roboto, "Courier New", Courier, monospace;
+  font-family: "Roboto", sans-serif;
   font-weight: 100;
 }
 
@@ -21,7 +21,27 @@ a {
     outline: 0;
   }
 }
-
+.header1 {
+  font-size: 50px;
+  font-weight: 300;
+}
+.header3 {
+  font-size: 25px;
+  padding-bottom: $spacer/1.5;
+}
+.header6 {
+  font-size: 15px;
+  padding-bottom: $spacer/3;
+}
+.text1 {
+  letter-spacing: 0.8px;
+  line-height: 1.5;
+  font-weight: 300;
+}
+.text2 {
+  font-size: 14px;
+  line-height: 1.2;
+}
 .btn {
   margin-top: $spacer / 2;
   padding: $spacer / 5 $spacer;
@@ -158,13 +178,6 @@ video {
   vertical-align: baseline;
 }
 
-span {
-  font-size: 14px;
-}
-p {
-  font-size: 14px;
-}
-
 button:focus {
   border: none;
   outline: 0;
@@ -222,8 +235,33 @@ a {
   font-size: 14px;
   color: #8d8d8d;
   line-height: 25px;
+  font-weight: 300;
 }
 
+span {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+strong {
+  font-weight: 500;
+}
+.thin {
+  font-weight: 100;
+}
+
+.cloud {
+  display: inline-block;
+  border-radius: 5px;
+  padding: $spacer/5;
+  background: #008b8b0d;
+}
+
+.devider {
+  width: 70%;
+  border-bottom: 1px solid #ffffff38;
+  margin-bottom: $spacer/8;
+}
 .q-tab {
   &:hover {
     color: black;

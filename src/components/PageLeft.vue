@@ -4,6 +4,10 @@ export default {
   props: {
     isInfoOpened: {
       type: Boolean
+    },
+    students: {
+      type: Array,
+      default: () => []
     }
   },
   data() {
@@ -61,8 +65,8 @@ export default {
       >
         <div class="row">
           <div class="col-lg-12">
-            <h3>О нас</h3>
-            <p>
+            <h3 class="header3">О нас</h3>
+            <p class="text1">
               Творчество – это необходимый элемент нашей жизни. Каждый человек
               уникален от природы, неспособных людей нет, и наша студия тому
               доказательство. На уроках по вокалу вы сможете раскрыть свою
@@ -78,7 +82,7 @@ export default {
                 class="item"
               >
                 <span class="icon fa fa-chevron-circle-right"></span>
-                <h6 class="title">{{ service.name }}</h6>
+                <h6 class="header6 title">{{ service.name }}</h6>
                 <p class="description">{{ service.description }}</p>
               </li>
             </ul>
@@ -95,8 +99,9 @@ export default {
       >
         <div class="row">
           <div class="col-lg-12">
-            <h3>Стоимость занятий</h3>
-            <p>
+            <h3 class="header3">Стоимость занятий</h3>
+            <div class="devider"></div>
+            <p class="text1">
               Пробное занятие – бесплатно!
             </p>
             <div class="event-detail">
@@ -107,7 +112,8 @@ export default {
               <span class="icon fa fa-chevron-circle-right"></span>
               <p class="title">8 раз месяц (абонемент) – 140 руб.</p>
             </div>
-            <p>Групповые занятия (пение в ансамбле):</p>
+            <div class="devider"></div>
+            <p class="text1">Групповые занятия (пение в ансамбле):</p>
             <div class="event-detail">
               <span class="icon fa fa-chevron-circle-right"></span>
               <p class="title">4 раза в месяц (абонемент) – 60 руб.</p>
@@ -127,19 +133,24 @@ export default {
       >
         <div class="row">
           <div class="col-lg-12">
-            <h3>Наши Педагоги</h3>
+            <h3 class="header3">Наши Педагоги</h3>
             <div class="row minus-margin">
               <div class="col-xs-6 col-lg-4 margin-btm-lg">
                 <img
-                  class="img-responsive"
+                  class="teacher img-responsive"
                   src="../statics/img/team1.jpg"
                   alt="team"
                 />
-                <span class="team-per">Джо Гарин</span>
-                <span class="team-desn">рок певец</span>
-                <p>
-                  Proin gravida nibh vel velit auctor aliquet. Aenean
-                  sollicitudin, lorem consequat ipsum.
+                <span class="team-per">Светлана Молокова</span>
+                <span class="team-desn"
+                  >педагог по вокалу, фортепиано, аккордеону</span
+                >
+                <p class="text1">
+                  Два музыкальных образования ( аккомпаниатор (аккордеон,
+                  фортепиано) и педагог по вокалу) Авторская методика обучения.
+                  За спиной множество международных конкурсов и фестивалей, в
+                  том числе и у учеников. Светлана считает, что неспособных
+                  людей нет, есть ленивые.
                 </p>
                 <ul class="team-social">
                   <li>
@@ -156,44 +167,48 @@ export default {
                   </li>
                 </ul>
               </div>
-              <div class="col-xs-6 col-lg-4 margin-btm-lg">
+              <!--              <div class="col-xs-6 col-lg-4 margin-btm-lg">-->
+              <!--                <img-->
+              <!--                  class="teacher img-responsive"-->
+              <!--                  src="../statics/img/team2.jpg"-->
+              <!--                  alt="team"-->
+              <!--                />-->
+              <!--                <span class="team-per">Анна Валицкая</span>-->
+              <!--                <span class="team-desn">редагог по гитаре/укулеле</span>-->
+              <!--                <p class="text1">-->
+              <!--                  Высшее образование. Ученики лауреаты республиканских и-->
+              <!--                  международных конкурсов и фестивалей. Сама Анна прекрасный-->
+              <!--                  музыкант, владеет многими другими музыкальными инструментами и-->
+              <!--                  играет в популярной рок группе.-->
+              <!--                </p>-->
+              <!--                <ul class="team-social">-->
+              <!--                  <li>-->
+              <!--                    <a href=""><i class="fab fa-facebook-f"></i></a>-->
+              <!--                  </li>-->
+              <!--                  <li>-->
+              <!--                    <a href=""><i class="fab fa-vk"></i></a>-->
+              <!--                  </li>-->
+              <!--                  <li>-->
+              <!--                    <a href=""><i class="fab fa-instagram"></i></a>-->
+              <!--                  </li>-->
+              <!--                  <li>-->
+              <!--                    <a href=""><i class="fab fa-telegram-plane"></i></a>-->
+              <!--                  </li>-->
+              <!--                </ul>-->
+              <!--              </div>-->
+              <div class="col-xs-6 col-lg-4 margin-btm-lg margin-bottom-0">
                 <img
-                  class="img-responsive"
+                  class="teacher img-responsive"
                   src="../statics/img/team2.jpg"
                   alt="team"
                 />
-                <span class="team-per">max tailor</span>
-                <span class="team-desn">jazz singer</span>
-                <p>
-                  Proin gravida nibh vel velit auctor aliquet. Aenean
-                  sollicitudin, lorem consequat ipsum.
-                </p>
-                <ul class="team-social">
-                  <li>
-                    <a href=""><i class="fab fa-facebook-f"></i></a>
-                  </li>
-                  <li>
-                    <a href=""><i class="fab fa-vk"></i></a>
-                  </li>
-                  <li>
-                    <a href=""><i class="fab fa-instagram"></i></a>
-                  </li>
-                  <li>
-                    <a href=""><i class="fab fa-telegram-plane"></i></a>
-                  </li>
-                </ul>
-              </div>
-              <div class="col-xs-6 col-lg-4 margin-btm-lg margin-bottom-0">
-                <img
-                  class="img-responsive"
-                  src="../statics/img/team3.jpg"
-                  alt="team"
-                />
-                <span class="team-per">amanda grey</span>
-                <span class="team-desn">voice artist</span>
-                <p>
-                  Proin gravida nibh vel velit auctor aliquet. Aenean
-                  sollicitudin, lorem consequat ipsum.
+                <span class="team-per">Анна Валицкая</span>
+                <span class="team-desn">педагог по гитаре/укулеле</span>
+                <p class="text1">
+                  Высшее образование. Ученики лауреаты республиканских и
+                  международных конкурсов и фестивалей. Сама Анна прекрасный
+                  музыкант, владеет многими другими музыкальными инструментами и
+                  играет в популярной рок группе.
                 </p>
                 <ul class="team-social">
                   <li>
@@ -217,92 +232,39 @@ export default {
       <!--/Team Sec-->
       <!--Projects Sec-->
       <section
-        class="container-fluid align-center text-left animated sec-pad-top"
+        class="container-fluid align-center text-left animated sec-pad-top students"
       >
         <div class="row">
           <div class="col-lg-12">
-            <h3>Наши Ученики</h3>
+            <h3 class="header3">Наши Ученики</h3>
+            <router-link class="more-details" :to="{ name: 'students' }"
+              >Подробнее</router-link
+            >
             <p>
-              Aenean sollicitudin, lorem quis bibendum auctor, nisi elit
-              consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit
-              amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum
-              velit.
+              Творческий - значит уникальный. Каждый человек имеет способности к
+              творчеству, и наши ученики тому подтверждение. Такие разные,
+              по-своему уникальные и успешные ученики Cassette studio.
             </p>
           </div>
         </div>
         <div class="project-gal-wrap">
           <div class="project-gallery row minus-margin">
-            <figure class="col-sm-6 margin-btm-lg">
-              <a
-                href="../statics/img/project1.jpg"
-                itemprop="contentUrl"
-                data-size="730x490"
-              >
-                <img
-                  class="img-responsive"
-                  src="../statics/img/project1.jpg"
-                  itemprop="thumbnail"
-                  alt="Image description"
-                />
-                <div class="hover"><span>+</span></div>
-              </a>
-              <figcaption itemprop="caption description">
-                Performance at Berlin
-              </figcaption>
-            </figure>
-            <figure class="col-sm-6 margin-btm-lg">
-              <a
-                href="../statics/img/project2.jpg"
-                itemprop="contentUrl"
-                data-size="730x490"
-              >
-                <img
-                  class="img-responsive"
-                  src="../statics/img/project2.jpg"
-                  itemprop="thumbnail"
-                  alt="Image description"
-                />
-                <div class="hover"><span>+</span></div>
-              </a>
-              <figcaption itemprop="caption description">
-                Rock Band
-              </figcaption>
-            </figure>
-            <figure class="col-sm-6 margin-btm-lg">
-              <a
-                href="../statics/img/project3.jpg"
-                itemprop="contentUrl"
-                data-size="730x490"
-              >
-                <img
-                  class="img-responsive"
-                  src="../statics/img/project3.jpg"
-                  itemprop="thumbnail"
-                  alt="Image description"
-                />
-                <div class="hover"><span>+</span></div>
-              </a>
-              <figcaption itemprop="caption description">
-                Rosted Almonds Album
-              </figcaption>
-            </figure>
-            <figure class="col-sm-6 margin-btm-lg">
-              <a
-                href="../statics/img/project4.jpg"
-                itemprop="contentUrl"
-                data-size="730x490"
-              >
-                <img
-                  class="img-responsive"
-                  src="../statics/img/project4.jpg"
-                  itemprop="thumbnail"
-                  alt="Image description"
-                />
-                <div class="hover"><span>+</span></div>
-              </a>
-              <figcaption itemprop="caption description">
-                The Guitarist
-              </figcaption>
+            <figure
+              v-for="(student, index) in students"
+              class="col-sm-6 margin-btm-lg"
+              :key="`student-${index}`"
+            >
+              <img
+                class="img-responsive student"
+                :src="student.imgSrc"
+                alt="student image "
+              />
+              <p>
+                <strong>{{ student.name }}</strong>
+              </p>
+              <p itemprop="caption description">
+                {{ student.teaser }}
+              </p>
             </figure>
           </div>
         </div>
@@ -315,19 +277,19 @@ export default {
       >
         <div class="row">
           <div class="col-lg-12">
-            <h3>Our Sponsorers</h3>
+            <h3 class="header3">Наши партнёры</h3>
             <div class="row">
               <div class="col-sm-3 col-xs-6">
                 <img
                   class="img-responsive"
-                  src="../statics/img/client1.png"
+                  src="../statics/img/client1.svg"
                   alt="client"
                 />
               </div>
               <div class="col-sm-3 col-xs-6">
                 <img
                   class="img-responsive"
-                  src="../statics/img/client2.png"
+                  src="../statics/img/client2.svg"
                   alt="client"
                 />
               </div>
@@ -363,7 +325,13 @@ ul {
   min-height: 100%;
   .page-inner {
     section {
-      padding: $spacer / 2 $spacer * 3;
+      padding: $spacer / 2 $spacer * 1.5;
+      .more-details {
+        text-decoration: underline;
+        margin-bottom: 26px;
+        font-weight: 400;
+        line-height: 2.5;
+      }
     }
     .small-hr {
       margin-top: 9px;
@@ -381,6 +349,31 @@ ul {
 }
 .img-responsive {
   width: 100%;
+  object-fit: cover;
+  transition: 0.7s ease-in-out;
+  &.teacher {
+    height: 41vw;
+    max-height: 300px;
+    //object-position: 20% 10px;
+    @include at-break($break--base) {
+      filter: grayscale(100%);
+      &:hover {
+        filter: none;
+      }
+      //-webkit-filter: grayscale(100%);
+    }
+  }
+  &.student {
+    height: 64vw;
+    max-height: 300px;
+    @include at-break($break--base) {
+      height: 34vw;
+      filter: grayscale(100%);
+      &:hover {
+        filter: none;
+      }
+    }
+  }
 }
 .minus-margin {
   margin-left: -$spacer/2;
@@ -483,7 +476,7 @@ ul {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  padding-top: 27px;
+  padding: $spacer/4 0;
   width: 100%;
   .item {
     float: left;
@@ -499,7 +492,7 @@ ul {
     }
     .description {
       font-size: 14px;
-      line-height: 1;
+      line-height: 1.2;
       padding-left: $spacer;
     }
   }
@@ -509,6 +502,7 @@ ul {
     float: left;
     font-size: 16px;
     line-height: 25px;
+    padding-top: $spacer/20;
     padding-right: $spacer / 2;
   }
 }

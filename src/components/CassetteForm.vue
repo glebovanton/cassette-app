@@ -1,11 +1,14 @@
 <script>
+import axios from "axios";
+
 export default {
   name: "CassetteForm",
   data() {
     return {
       name: null,
       email: null,
-      message: null
+      message: null,
+      subject: "Заказ с Cassette.by"
     };
   },
 
@@ -26,8 +29,36 @@ export default {
           message: "Пожалуйста, не отправляйте пустое сообщение"
         });
       } else {
-        this.cleanForm();
-        console.log("отправлено");
+        const dataString =
+          "name=" +
+          this.name +
+          "&email=" +
+          this.email +
+          "&subject=" +
+          this.subject +
+          "&message=" +
+          this.message;
+
+        axios
+          .post("sendmail.php", dataString)
+          .then(response => {
+            console.log(response);
+            console.log("отправлено");
+            this.cleanForm();
+          })
+          .catch(error => {
+            console.log(error);
+          });
+
+        // $.ajax({
+        //   type: "POST",
+        //   url: "sendmail.php",
+        //   data: dataString,
+        //   success: () => {
+        //     this.cleanForm();
+        //     console.log("отправлено");
+        //   }
+        // });
         this.$q.notify({
           color: "green-4",
           textColor: "white",
@@ -41,7 +72,11 @@ export default {
 </script>
 
 <template>
-  <div class="cassette-form q-pa-md" style="max-width: 400px">
+  <div
+    class="cassette-form q-pa-md"
+    style="max-width: 400px"
+    ref="cassetteFormWrap"
+  >
     <q-form
       greedy
       class="q-gutter-md"
@@ -55,6 +90,7 @@ export default {
         hint=""
         lazy-rules
         :rules="[val => (val && val.length > 0) || 'Поле не может быть пустым']"
+        ref="nameField"
       />
       <q-input
         dark

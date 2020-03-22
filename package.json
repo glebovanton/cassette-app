@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@quasar/extras": "^1.5.0",
+    "axios": "^0.19.2",
     "core-js": "^2.6.10",
     "quasar": "^1.8.5"
   },
@@ -23,7 +24,8 @@
     "eslint": "^5.16.0",
     "eslint-loader": "^2.2.1",
     "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-vue": "^5.2.3"
+    "eslint-plugin-vue": "^5.2.3",
+    "prettier": "1.19.1"
   },
   "engines": {
     "node": ">= 10.18.1",
