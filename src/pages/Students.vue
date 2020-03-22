@@ -1,13 +1,27 @@
 <script>
+import { cassetteData } from "../statics/js/data.js";
+
 export default {
   name: "PageStudents",
-  data() {
-    return {};
-  },
-  computed: {
-    students() {
-      return this.$attrs.students;
+  meta: {
+    // sets document title
+    title: "our students",
+    titleTemplate: title => `Cassette-${title}`,
+
+    // meta tags
+    meta: {
+      description: {
+        name: "description",
+        content:
+          "Такие разные, по-своему уникальные и успешные ученики Cassette studio"
+      },
+      keywords: { name: "keywords", content: "Cassette студия" }
     }
+  },
+  data() {
+    return {
+      students: cassetteData.students
+    };
   }
 };
 </script>

@@ -4,6 +4,23 @@ import PageLeft from "../components/PageLeft.vue";
 import PageRight from "../components/PageRight.vue";
 export default {
   name: "Index",
+  meta: {
+    // sets document title
+    title: "студия в Минске",
+    titleTemplate: title => `Cassette-${title}`,
+
+    // meta tags
+    meta: {
+      description: {
+        name: "description",
+        content: "Cassette-Музыкальная студия в Минске. +375 25 797-24-52"
+      },
+      keywords: {
+        name: "keywords",
+        content: "студия в Минске, научиться петь, научиться играть"
+      }
+    }
+  },
   components: { Oferta, PageLeft, PageRight },
   data() {
     return {
@@ -219,7 +236,7 @@ export default {
         <!--/Intro-->
 
         <!--Left Section-->
-        <PageLeft :students="$attrs.students" :isInfoOpened="isInfoOpened" />
+        <PageLeft :isInfoOpened="isInfoOpened" />
         <!--/Left Section-->
 
         <!--Right Section-->

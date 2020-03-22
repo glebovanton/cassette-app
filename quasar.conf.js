@@ -78,7 +78,7 @@ module.exports = function(ctx) {
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
       scopeHoisting: true,
-      vueRouterMode: "history", // available values: 'hash', 'history'
+      vueRouterMode: "hash", // available values: 'hash', 'history'
       // publicPath: "/",
       showProgress: true,
       gzip: false,
@@ -122,9 +122,9 @@ module.exports = function(ctx) {
       workboxPluginMode: "GenerateSW", // 'GenerateSW' or 'InjectManifest'
       workboxOptions: {}, // only for GenerateSW
       manifest: {
-        name: "Cassette App",
-        short_name: "Cassette App",
-        description: "Cassette app",
+        name: "Cassette studio",
+        short_name: "Cassette studio",
+        description: "Cassette studio",
         display: "standalone",
         orientation: "portrait",
         background_color: "#ffffff",

@@ -1,54 +1,18 @@
 <script>
+import { cassetteData } from "../statics/js/data.js";
+
 export default {
   name: "PageLeft",
   props: {
     isInfoOpened: {
       type: Boolean
-    },
-    students: {
-      type: Array,
-      default: () => []
     }
   },
   data() {
     return {
-      services: [
-        {
-          name: "Вокал.",
-          description:
-            "Мы научим вас управлять своим голосом. Вокал для детей 4-7 лет. (Занятие длится 35 минут, и включают в себя развитие правильного дыхания, артикуляции и дикции ребенка. На занятиях по вокалу дети не только осваивают навыки правильного пения, но и развивают чувство ритма, координацию, творческое воображение и память. ) Занятия для взрослых длятся 55 минут. (Во время занятий используется авторская методика. Включающая в себя элементы вокальной йоги, речевых упражнений, массажа мышц речевого и голосового аппаратов, что дает возможность в полной мере раскрыть свой естественный уверенный голос.)"
-        },
-        {
-          name: "Пение в ансамбле.",
-          description:
-            "Пение в ансамбле способствует развитию гармонического слуха, развивает умение петь многоголосья, подстраивать второй голос, импровизировать. Раскрепощает и придает чувство уверенности, а самое главное дает возможность приятно и полезно провести свободное время в душевном творческом коллективе. Занятия длятся 55 мин, 1 или 2 раза в неделю. Количество участников ансамбля – от 3 до 8 человек."
-        },
-        {
-          name: "Фортепиано.",
-          description:
-            "Научим играть ваши любимые песни. Результат уже через пару занятий. Фортепиано универсальный инструмент, на котором можно сыграть все что угодно. Обучение для детей от 7 лет и взрослых."
-        },
-        {
-          name: "Гитара.",
-          description:
-            "Самый популярный инструмент. Стань душой компании вместе с нашей студией. Результат с первого занятия. Обучение детей от 10 лет и взрослых."
-        },
-        {
-          name: "Укулеле.",
-          description:
-            "Необычный по звучанию и простой в усвоении инструмент станет украшением любой песни, исполняемой в душевной компании. Обучение для детей от 10 лет и взрослых. Результат с первого занятия."
-        },
-        {
-          name: "Аккордеон.",
-          description:
-            "Универсальный и благородный аккордеон не так прост в освоении, но богат в своем разнообразии возможностей. На этом инструменте можно сыграть все что угодно, начиная от классических произведений, заканчивая популярными хитами в любых жанрах и направления. Освоить данный инструмент можно в нашей студии. Занятия для детей от 12 лет и взрослых."
-        },
-        {
-          name: "Сольфеджио.",
-          description:
-            "Занятия по сольфеджио дают основу теоретических знаний о законах музыки и практических навыков правильного интонирования и решения гармонических задач. Занятия будут полезны тем, кто собирается поступать в творческие ССУЗы или ВУЗы."
-        }
-      ]
+      services: cassetteData.services,
+      students: cassetteData.students,
+      teachers: cassetteData.teachers
     };
   }
 };
@@ -135,93 +99,43 @@ export default {
           <div class="col-lg-12">
             <h3 class="header3">Наши Педагоги</h3>
             <div class="row minus-margin">
-              <div class="col-xs-6 col-lg-4 margin-btm-lg">
+              <div
+                v-for="(teacher, index) in teachers"
+                class="col-xs-6 col-lg-4 margin-btm-lg"
+                :key="`teacher-${index}`"
+              >
                 <img
                   class="teacher img-responsive"
-                  src="../statics/img/team1.jpg"
-                  alt="team"
+                  :src="teacher.imgSrc"
+                  alt="teacher"
                 />
-                <span class="team-per">Светлана Молокова</span>
-                <span class="team-desn"
-                  >педагог по вокалу, фортепиано, аккордеону</span
+                <span class="team-per"
+                  >{{ teacher.name }} {{ teacher.surname }}</span
                 >
+                <span class="team-desn">{{ teacher.position }}</span>
                 <p class="text1">
-                  Два музыкальных образования ( аккомпаниатор (аккордеон,
-                  фортепиано) и педагог по вокалу) Авторская методика обучения.
-                  За спиной множество международных конкурсов и фестивалей, в
-                  том числе и у учеников. Светлана считает, что неспособных
-                  людей нет, есть ленивые.
+                  {{ teacher.description }}
                 </p>
                 <ul class="team-social">
-                  <li>
-                    <a href=""><i class="fab fa-facebook-f"></i></a>
+                  <li v-if="teacher.social.facebook">
+                    <a :href="teacher.social.facebook" target="_blank"
+                      ><i class="fab fa-facebook-f"></i
+                    ></a>
                   </li>
-                  <li>
-                    <a href=""><i class="fab fa-vk"></i></a>
+                  <li v-if="teacher.social.vk">
+                    <a :href="teacher.social.vk" target="_blank"
+                      ><i class="fab fa-vk"></i
+                    ></a>
                   </li>
-                  <li>
-                    <a href=""><i class="fab fa-instagram"></i></a>
+                  <li v-if="teacher.social.instagram">
+                    <a :href="teacher.social.instagram" target="_blank"
+                      ><i class="fab fa-instagram"></i
+                    ></a>
                   </li>
-                  <li>
-                    <a href=""><i class="fab fa-telegram-plane"></i></a>
-                  </li>
-                </ul>
-              </div>
-              <!--              <div class="col-xs-6 col-lg-4 margin-btm-lg">-->
-              <!--                <img-->
-              <!--                  class="teacher img-responsive"-->
-              <!--                  src="../statics/img/team2.jpg"-->
-              <!--                  alt="team"-->
-              <!--                />-->
-              <!--                <span class="team-per">Анна Валицкая</span>-->
-              <!--                <span class="team-desn">редагог по гитаре/укулеле</span>-->
-              <!--                <p class="text1">-->
-              <!--                  Высшее образование. Ученики лауреаты республиканских и-->
-              <!--                  международных конкурсов и фестивалей. Сама Анна прекрасный-->
-              <!--                  музыкант, владеет многими другими музыкальными инструментами и-->
-              <!--                  играет в популярной рок группе.-->
-              <!--                </p>-->
-              <!--                <ul class="team-social">-->
-              <!--                  <li>-->
-              <!--                    <a href=""><i class="fab fa-facebook-f"></i></a>-->
-              <!--                  </li>-->
-              <!--                  <li>-->
-              <!--                    <a href=""><i class="fab fa-vk"></i></a>-->
-              <!--                  </li>-->
-              <!--                  <li>-->
-              <!--                    <a href=""><i class="fab fa-instagram"></i></a>-->
-              <!--                  </li>-->
-              <!--                  <li>-->
-              <!--                    <a href=""><i class="fab fa-telegram-plane"></i></a>-->
-              <!--                  </li>-->
-              <!--                </ul>-->
-              <!--              </div>-->
-              <div class="col-xs-6 col-lg-4 margin-btm-lg margin-bottom-0">
-                <img
-                  class="teacher img-responsive"
-                  src="../statics/img/team2.jpg"
-                  alt="team"
-                />
-                <span class="team-per">Анна Валицкая</span>
-                <span class="team-desn">педагог по гитаре/укулеле</span>
-                <p class="text1">
-                  Высшее образование. Ученики лауреаты республиканских и
-                  международных конкурсов и фестивалей. Сама Анна прекрасный
-                  музыкант, владеет многими другими музыкальными инструментами и
-                  играет в популярной рок группе.
-                </p>
-                <ul class="team-social">
-                  <li>
-                    <a href=""><i class="fab fa-facebook-f"></i></a>
-                  </li>
-                  <li>
-                    <a href=""><i class="fab fa-vk"></i></a>
-                  </li>
-                  <li>
-                    <a href=""><i class="fab fa-instagram"></i></a>
-                  </li>
-                  <li>
-                    <a href=""><i class="fab fa-telegram-plane"></i></a>
+                  <li v-if="teacher.social.telegram">
+                    <a :href="teacher.social.telegram" target="_blank"
+                      ><i class="fab fa-telegram-plane"></i
+                    ></a>
                   </li>
                 </ul>
               </div>

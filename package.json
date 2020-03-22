@@ -2,7 +2,7 @@
   "name": "cassette",
   "version": "0.0.1",
   "description": "Cassette-Музыкальная студия в Минске. +375 25 797-24-52",
-  "productName": "Cassette App",
+  "productName": "Cassette studio",
   "cordovaId": "org.cordova.quasar.app",
   "capacitorId": "",
   "author": "Anton <workglebov@gmail.com>",
